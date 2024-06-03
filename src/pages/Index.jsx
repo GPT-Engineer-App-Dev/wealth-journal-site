@@ -1,19 +1,34 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, SimpleGrid, Box, VStack, Heading, Text } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ArticleCard from "../components/ArticleCard";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      <Navbar />
+      <Container maxW={"7xl"} p={4}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mb={10}>
+          <ArticleCard
+            title="Featured Article 1"
+            image="https://via.placeholder.com/400"
+            link="#"
+          />
+          <ArticleCard
+            title="Featured Article 2"
+            image="https://via.placeholder.com/400"
+            link="#"
+          />
+        </SimpleGrid>
+        <VStack align="start" spacing={4}>
+          <Heading as="h2" size="lg">Trending Articles</Heading>
+          <Text>Trending Article 1</Text>
+          <Text>Trending Article 2</Text>
+          <Text>Trending Article 3</Text>
+        </VStack>
+      </Container>
+      <Footer />
+    </Box>
   );
 };
 
